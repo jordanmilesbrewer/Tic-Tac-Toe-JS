@@ -1,0 +1,74 @@
+body {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+header {
+  text-align: center;
+}
+
+#game-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  gap: 1rem;
+}
+
+#game-buttons button {
+  border: none;
+  background-color: transparent;
+}
+
+#game-buttons button:hover {
+  scale: 1.2;
+  cursor: pointer;
+}
+
+#gameboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  width: 25%;
+  margin: 0 auto;
+  grid-gap: 1vh;
+}
+
+#gameboard .box {
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 10vh;
+  cursor: pointer;
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#initial-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 20%;
+  top: 20%;
+  width: 60%;
+  height: 300px;
+  overflow: auto;
+}
+
+.form {
+  background-color: darkcyan;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
