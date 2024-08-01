@@ -24,6 +24,11 @@ const winningConditions = [
 ];
 
 const form = document.querySelector(".form-submit");
+const newGameButton = document.querySelector(".new-game");
+
+newGameButton.addEventListener("click", function () {
+  location.reload();
+});
 
 form.addEventListener("submit", (event) => {
   event.preventDefault(); //this stops the form from reseting when refreshing page
@@ -52,6 +57,12 @@ function addEventListenersToGameBoard(data) {
     }); //this basically gives tells me what box had been clicked on
   });
 } //addEventListenersToGameBoard does the following:Selects all elements with the class box using querySelectorAll.For each box element, it adds a click event listener.When a box is clicked, the event handler calls the playMove function, passing it the clicked element and the data parameter.This allows the game board (presumably a set of elements with the class box) to respond to user clicks and perform some action (defined in the playMove function) using the clicked element and any additional data provided.
+function resetDom() {
+  document.querySelectorAll(".box").forEach((box) => {
+    box.className = "box";
+    box.textContent = "";
+  });
+}
 
 function initialiseGame(data) {
   //initialisse game variables
@@ -178,3 +189,5 @@ function aiMove(data) {
   // Switch back to the other player
   changePlayer(data);
 }
+
+//FUTUIRE REFERENCE FOR MAKING THE AI MOVES MORE DIFFICULT, USE THE MINMAX METHOD
